@@ -1,5 +1,5 @@
 {
-    "name": "Random Terrain #1",
+    "name": "Random Terrain",
     "description": "",
     "dependencies": {
         "device": "*",
@@ -15,13 +15,14 @@
         "README.md",
         "assets.json",
         "tilemap.g.jres",
-        "tilemap.g.ts"
+        "tilemap.g.ts",
+        "main.py"
     ],
     "testFiles": [
         "test.ts"
     ],
     "targetVersions": {
-        "target": "1.4.45",
+        "target": "1.5.46",
         "targetId": "arcade"
     },
     "supportedTargets": [

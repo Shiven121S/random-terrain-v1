@@ -1,5 +1,17 @@
-function Map (Step: number) {
-    console.log(Step)
+function Fill () {
+    for (let value of tiles.getTilesByType(assets.tile`myTile1`)) {
+        tiles.placeOnTile(mySprite, value)
+        mySprite.y += 8
+        if (tiles.tileIs(tiles.locationOfSprite(mySprite), assets.tile`myTile`)) {
+            mySprite.y += 8
+        }
+        while (tiles.tileIs(tiles.locationOfSprite(mySprite), assets.tile`myTile0`)) {
+            tiles.setTileAt(tiles.locationOfSprite(mySprite), assets.tile`myTile`)
+            mySprite.y += 8
+        }
+    }
+}
+function GenerateATile () {
     mySprite.x += 8
     tiles.setTileAt(tiles.locationOfSprite(mySprite), assets.tile`myTile`)
     VerticalChange = randint(-1, 1)
@@ -31,23 +43,7 @@ mySprite.setFlag(SpriteFlag.Invisible, true)
 tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 7))
 tiles.setTileAt(tiles.locationOfSprite(mySprite), assets.tile`myTile1`)
 console.log("0")
-Map(1)
-Map(2)
-Map(3)
-Map(4)
-Map(5)
-Map(6)
-Map(7)
-Map(8)
-Map(9)
-Map(10)
-Map(11)
-Map(12)
-Map(13)
-Map(14)
-Map(15)
-Map(16)
-Map(17)
-Map(18)
-Map(19)
-Map(20)
+for (let index = 0; index < 20; index++) {
+    GenerateATile()
+}
+Fill()
